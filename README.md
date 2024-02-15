@@ -61,7 +61,7 @@ kubectl delete namespace istio-system
 - Delete the app
 ```
 cd nginx-istio
-Kubectl delete -f .
+kubectl delete -f .
 ```
 - Remove the added istio label to the namespace
 ```
