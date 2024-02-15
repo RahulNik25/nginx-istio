@@ -16,6 +16,7 @@ kubectl label namespace default istio-injection=enabled
 ```
 - Clone the repo and execute following cmds to deploy sample app.
 ```
+cd nginx-istio
 kubectl apply -f nginx-deployment-version1.yaml
 kubectl apply -f nginx-deployment-version2.yaml
 kubectl apply -f nginx-service.yaml
@@ -27,6 +28,7 @@ istioctl analyze
 ```
 - Install kiali and the other addons using following cmds and wait for them to be deployed.
 ```
+cd <istio_dir>
 kubectl apply -f samples/addons
 kubectl rollout status deployment/kiali -n istio-system
 ```
@@ -49,6 +51,7 @@ Metrics using kiali dashboard:
 Steps to Uninstall
 - Remove installed addons
 ```
+cd <istio_dir>
 kubectl delete -f samples/addons
 ```
 - Delete istio namespace
@@ -57,6 +60,7 @@ kubectl delete namespace istio-system
 ```
 - Delete the app
 ```
+cd nginx-istio
 Kubectl delete -f .
 ```
 - Remove the added istio label to the namespace
