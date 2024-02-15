@@ -8,7 +8,7 @@ Steps to deploy nginx sample app with multiple versions and route traffic betwee
 curl -L https://istio.io/downloadIstio | sh -
 cd <istio_dir>
 export PATH=$PWD/bin:$PATH
-istioctl install - set profile=demo -y
+istioctl install --set profile=demo -y
 ```
 - Add a namespace label to instruct istio to automatically inject Envoy sidecar proxies when you deploy your application later:
 ```
